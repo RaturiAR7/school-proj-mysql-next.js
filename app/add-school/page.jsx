@@ -1,5 +1,7 @@
+import React from "react";
+
 const page = () => {
-  return <div>Add School</div>;
+  return <div></div>;
 };
 
 export default page;
