@@ -9,7 +9,7 @@ export default async function Page() {
         process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
       }/api/school`,
       {
-        cache: "no-store",
+        next: { revalidate: 0 },
       }
     );
     schoolData = await response.json();
@@ -40,10 +40,10 @@ export default async function Page() {
         </div>
       </header>
       <div className='container mx-auto px-4 mb-12'>
-        <h2 className='text-3xl font-bold text-slate-800 mb-2'>
+        <h2 className='text-3xl font-bold text-slate-800 mb-2 text-center'>
           {schoolData.length} Premium Schools
         </h2>
-        <p className='text-slate-600'>
+        <p className='text-slate-600 text-center'>
           Curated educational excellence for your child
         </p>
       </div>
