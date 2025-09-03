@@ -14,3 +14,12 @@ export async function POST(req) {
     return Response.json({ error: error.message }, { status: 500 });
   }
 }
+
+export async function GET() {
+  try {
+    const schools = await prisma.school.findMany();
+    return Response.json(schools, { status: 200 });
+  } catch (error) {
+    return Response.json({ error: error.message }, { status: 500 });
+  }
+}
