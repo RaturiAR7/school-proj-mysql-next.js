@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { testConnection } from "./lib/db";
 
 export default function Home() {
