@@ -11,7 +11,7 @@ export default async function Page() {
         process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
       }/api/school`,
       {
-        next: { revalidate: 0 },
+        next: { revalidate: 60 },
       }
     );
     schoolData = await response.json();
@@ -21,7 +21,6 @@ export default async function Page() {
 
   return (
     <div className='min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-emerald-50'>
-      {/* Header */}
       <header className='relative bg-gradient-to-br from-slate-800 via-slate-700 to-emerald-800 text-white py-24 overflow-hidden'>
         <div className='container mx-auto px-4 relative z-10 text-center max-w-4xl'>
           <div className='flex items-center justify-center gap-3 mb-6'>
