@@ -1,6 +1,8 @@
 import { Search, GraduationCap } from "lucide-react";
 import SchoolCard from "../components/SchoolCard";
 
+export const revalidate = 60;
+
 export default async function Page() {
   let schoolData = [];
   try {
