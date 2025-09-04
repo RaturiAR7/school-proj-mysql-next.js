@@ -1,5 +1,6 @@
-import { Search, GraduationCap } from "lucide-react";
+import { Search, GraduationCap, Delete, Plus } from "lucide-react";
 import SchoolCard from "../components/SchoolCard";
+import Link from "next/link";
 
 export const revalidate = 60;
 
@@ -20,7 +21,7 @@ export default async function Page() {
   }
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-emerald-50'>
+    <div className='min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-emerald-50 p-10'>
       <header className='relative bg-gradient-to-br from-slate-800 via-slate-700 to-emerald-800 text-white py-24 overflow-hidden'>
         <div className='container mx-auto px-4 relative z-10 text-center max-w-4xl'>
           <div className='flex items-center justify-center gap-3 mb-6'>
@@ -65,6 +66,15 @@ export default async function Page() {
             </h3>
           </div>
         )}
+      </div>
+      <div className='flex flex-col sm:flex-row gap-8 justify-center items-center'>
+        <Link
+          href='/schools/add'
+          className='bg-white text-emerald-700 border-2 border-emerald-600 md:px-12 md:py-5 px-6 py-2 rounded-2xl font-bold text-base md:text-xl hover:bg-emerald-600 hover:text-white transition-all duration-200 shadow-lg flex items-center gap-3'
+        >
+          <Plus />
+          Add Your School
+        </Link>
       </div>
     </div>
   );

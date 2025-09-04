@@ -55,7 +55,6 @@ const SchoolCard = ({ school }) => {
             </p>
           </div>
         </div>
-
         <button className='w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-4 rounded-2xl font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-emerald-200 group-hover:shadow-xl'>
           <span className='flex items-center justify-center gap-2'>
             Explore School

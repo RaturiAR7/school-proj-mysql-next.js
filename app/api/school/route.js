@@ -42,3 +42,12 @@ export async function GET() {
     return Response.json({ error: error.message }, { status: 500 });
   }
 }
+
+export async function DELETE() {
+  try {
+    const { count } = await prisma.school.deleteMany({});
+    return Response.json(schools, { status: 200 });
+  } catch (error) {
+    return Response.json({ error: error.message }, { status: 500 });
+  }
+}
