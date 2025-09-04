@@ -22,7 +22,7 @@ export default async function Page() {
   }
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-emerald-50 p-10'>
+    <div className='min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-emerald-50'>
       <header className='relative bg-gradient-to-br from-slate-800 via-slate-700 to-emerald-800 text-white py-24 overflow-hidden'>
         <div className='container mx-auto px-4 relative z-10 text-center max-w-4xl'>
           <div className='flex items-center justify-center gap-3 mb-6'>
@@ -50,7 +50,7 @@ export default async function Page() {
           Curated educational excellence for your child
         </p>
       </div>
-      <div className='container mx-auto px-4 pb-24'>
+      <div className='container mx-auto md:px-4 px-2 pb-24'>
         {schoolData.length > 0 ? (
           <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 text-black '>
             {schoolData.map((school, index) => (
@@ -68,7 +68,7 @@ export default async function Page() {
           </div>
         )}
       </div>
-      <div className='flex flex-col sm:flex-row gap-8 justify-center items-center'>
+      <div className='flex flex-col sm:flex-row gap-8 justify-center items-center p-2'>
         <Link
           href='/schools/add'
           className='bg-white text-emerald-700 border-2 border-emerald-600 md:px-12 md:py-5 px-6 py-2 rounded-2xl font-bold text-base md:text-xl hover:bg-emerald-600 hover:text-white transition-all duration-200 shadow-lg flex items-center gap-3'
