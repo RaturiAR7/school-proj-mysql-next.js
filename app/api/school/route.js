@@ -2,6 +2,7 @@ import prisma from "../../lib/prisma";
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
+import { revalidatePath } from "next/cache";
 
 export async function POST(req) {
   try {
@@ -31,6 +32,8 @@ export async function POST(req) {
     return NextResponse.json(school, { status: 200 });
   } catch (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
+  } finally {
+    revalidatePath("/schools"); // invalidate home page cache
   }
 }
 
@@ -45,9 +48,11 @@ export async function GET() {
 
 export async function DELETE() {
   try {
-    const { count } = await prisma.school.deleteMany({});
+    await prisma.school.deleteMany({});
     return Response.json(schools, { status: 200 });
   } catch (error) {
     return Response.json({ error: error.message }, { status: 500 });
+  } finally {
+    revalidatePath("/schools");
   }
 }

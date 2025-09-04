@@ -1,6 +1,7 @@
 import { Search, GraduationCap, Delete, Plus } from "lucide-react";
 import SchoolCard from "../components/SchoolCard";
 import Link from "next/link";
+import DeleteButton from "../components/DeleteButton";
 
 export const revalidate = 60;
 
@@ -75,6 +76,7 @@ export default async function Page() {
           <Plus />
           Add Your School
         </Link>
+        <DeleteButton />
       </div>
     </div>
   );
