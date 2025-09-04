@@ -1,4 +1,5 @@
 import { Star, GraduationCap, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const SchoolCard = ({ school }) => {
   const data = {
@@ -7,8 +8,15 @@ const SchoolCard = ({ school }) => {
   return (
     <div className='group bg-black rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-emerald-200 transform hover:-translate-y-1'>
       <div className='relative overflow-hidden'>
-        <img
-          alt={school.name}
+        <Image
+          alt='school image'
+          src={
+            school.image
+              ? `/schoolImages/${school.image}`
+              : "/default-school.jpg"
+          }
+          width={400}
+          height={300}
           className='w-full h-52 object-cover group-hover:scale-105 transition-transform duration-700'
         />
         <div className='absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent'></div>
